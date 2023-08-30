@@ -65,10 +65,6 @@ function calculateAmount(frm, cdt, cdn) {
         frappe.model.set_value('Quotation', frm.doc.name, 'base_grand_total', baseGrandTotal);
         frappe.model.set_value('Quotation', frm.doc.name, 'total_taxes_and_charges', taxTotal);
         frappe.model.set_value('Quotation', frm.doc.name, 'rounded_total', roundedTotal);
-        // Convert grandTotal to words
-        in_words = frappe.utils.money_in_words(roundedTotal,frm.doc.currency);
-        frm.set_value('in_words', in_words);
-        console.log('yooww',in_words)
 
         // Log the calculated values
         console.log('total', total, 'grandTotal', grandTotal, 'baseGrandTotal', baseGrandTotal, 'taxTotal', taxTotal, 'rounded total', roundedTotal);

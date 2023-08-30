@@ -27,6 +27,6 @@ bench --site [site-name] migrate
 bench --site [site-name] clear-cache
 ```
 ## Enable the App
-Log in to your ERPNext instance using a browser.
-Go to the "Setup" module, and then click on "Installed Applications."
-Find the newly installed app ("test_app") in the list and enable it.
+1. Log in to your ERPNext instance using a browser.
+2. Go to the "Setup" module, and then click on "Installed Applications."
+3. Find the newly installed app ("test_app") in the list and enable it.
