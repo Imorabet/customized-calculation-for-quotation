@@ -12,7 +12,7 @@ app_license = "n"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/test_app/css/test_app.css"
-# app_include_js = "/assets/test_app/js/test_app.js"
+app_include_js = "/assets/test_app/js/custom_script.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/test_app/css/test_app.css"
@@ -95,7 +95,8 @@ app_license = "n"
 # Override standard doctype classes
 
 # override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
+# 	# "ToDo": "custom_app.overrides.CustomToDo"
+#     "calculate_taxes_and_totals":"test_app.override.Calculating"
 # }
 
 # Document Events
@@ -108,6 +109,11 @@ app_license = "n"
 #		"on_cancel": "method",
 #		"on_trash": "method"
 #	}
+# }
+# doc_events = {
+#     "Quotation": {
+#         "before_save": "test_app.override.update_item_amount"
+#     }
 # }
 
 # Scheduled Tasks
