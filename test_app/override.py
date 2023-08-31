@@ -5,15 +5,6 @@ from erpnext.controllers.taxes_and_totals import calculate_taxes_and_totals
 from erpnext.accounts.doctype.pricing_rule.utils import get_applied_pricing_rules
 
 
-# def update_item_amount(doc, method):
-#     total_amount = 0
-#     for item in doc.items:
-#         item.amount = flt(item.qty) * flt(item.rate) * flt(item.length) * flt(item.width)
-#         frappe.db.set_value('Quotation Item', item.name, 'amount', item.amount)
-# total_amount += item.amount
-# doc.total = total_amount
-# frappe.db.set_value('Quotation', doc.name, 'total', total_amount)
-
 class Calculating(calculate_taxes_and_totals):
     def calculate_item_values(self):
         if self.doc.get("is_consolidated"):
