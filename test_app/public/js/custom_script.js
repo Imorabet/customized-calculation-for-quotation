@@ -11,7 +11,7 @@ function calculateAmount(frm) {
             
             //tax calculations
             var taxTotal = 0;
-            var previousTaxTotal = frm.doc.total || 0;
+            var previousTaxTotal = total || 0;
             for (var i = 0; i < frm.doc.taxes.length; i++) {
                 var tax = frm.doc.taxes[i];
                 var currentTaxAmount = 0;
@@ -28,18 +28,15 @@ function calculateAmount(frm) {
                     currentTaxAmount = tax.rate * frm.doc.total_qty;
                 }
                 tax.tax_amount = currentTaxAmount;
-                console.log(currentTaxAmount, '===', tax.tax_amount)
 
                 //calculates total inside taxes 
                 taxTotal += currentTaxAmount;
                 if (i === 0) {
                     tax.total = previousTaxTotal + tax.tax_amount;
-                    console.log('firts row', tax.total)
                     previousTaxTotal = tax.total;
                 } else {
                     tax.total = previousTaxTotal + tax.tax_amount;
                     previousTaxTotal = tax.total
-                    console.log('others rows', tax.total)
 
                 }
             }
